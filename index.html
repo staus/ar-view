@@ -9,6 +9,10 @@
   <script type="module">
     document.documentElement.classList.remove('no-js');
     document.documentElement.classList.add('js');
+    let hash = new URL(document.URL).hash
+    if (hash != "") {
+      document.documentElement.classList.add('hash');
+    }
   </script>
 
   <meta name="description" content="Page description">
@@ -138,7 +142,6 @@
     let hash = new URL(document.URL).hash
     console.log("Hash", hash);
     if (hash != "") {
-      document.documentElement.classList.add('hash');
       setTimeout(() => {
         hash = hash.substring(1)
         const link = document.getElementById("ar-link-" + hash)
