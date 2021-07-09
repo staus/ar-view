@@ -30,19 +30,39 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/my.webmanifest">
   <meta name="theme-color" content="#FF00FF">
+  
+  <style>
+    body{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    section{
+      position: relative;
+      display: flex;
+      max-width: 500px;
+      gap: 40px;
+    }
+  </style>
+  
 </head>
 
 <body>
   <h1 id="title"></h1>
-  <a  id="ar-link-stratocaster" rel="ar"
-      href="https://staus.github.io/ar-view/fender_stratocaster.usdz#custom=https://staus.github.io/ar-view/banner-button-stratocaster.html&customHeight=large">
-      <img src="https://staus.github.io/ar-view/stratocaster_2x.jpg">
-  </a>
   
-  <a  id="ar-link-gramophone" rel="ar"
-      href="https://staus.github.io/ar-view/gramophone.usdz#custom=https://staus.github.io/ar-view/banner-button-gramophone.html&customHeight=small">
-      <img src="https://staus.github.io/ar-view/gramophone_2x.jpg">
-  </a>
+  <section>
+    
+    <a  id="ar-link-stratocaster" rel="ar"
+        href="https://staus.github.io/ar-view/fender_stratocaster.usdz#custom=https://staus.github.io/ar-view/banner-button-stratocaster.html&customHeight=large">
+        <img src="https://staus.github.io/ar-view/stratocaster_2x.jpg">
+    </a>
+
+    <a  id="ar-link-gramophone" rel="ar"
+        href="https://staus.github.io/ar-view/gramophone.usdz#custom=https://staus.github.io/ar-view/banner-button-gramophone.html&customHeight=small">
+        <img src="https://staus.github.io/ar-view/gramophone_2x.jpg">
+    </a>
+    
+  </section>
   
   <script>
     const stratocaster = document.getElementById("ar-link-stratocaster");
