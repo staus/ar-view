@@ -94,16 +94,20 @@
       }
     }, false);
     
-    let hash = new URL(document.URL).hash
-    console.log("Hash", hash);
-    if (hash != "") {
-      hash = hash.substring(1)
-      const link = document.getElementById("ar-link-" + hash)
-      console.log("Link", link);
-      if (link) {
-        link.click()
+    setTimeout(() => {
+      let hash = new URL(document.URL).hash
+      console.log("Hash", hash);
+      if (hash != "") {
+        hash = hash.substring(1)
+        const link = document.getElementById("ar-link-" + hash)
+        console.log("Link", link);
+        if (link) {
+
+          link.click()
+        }
       }
-    }
+    }, 500);
+    
   </script>
   
 </body>
