@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Unique page title - My Site</title>
+  <title>AR viewer test site</title>
 
   <script type="module">
     document.documentElement.classList.remove('no-js');
@@ -33,17 +33,35 @@
 </head>
 
 <body>
-  <a  id="ar-link" rel="ar"
-      href="https://staus.github.io/ar-view/fender_stratocaster.usdz#custom=https://staus.github.io/ar-view/banner-button.html&customHeight=large">
-      <img src="poster.jpg">
+  <h1 id="title"></h1>
+  <a  id="ar-link-stratocaster" rel="ar"
+      href="https://staus.github.io/ar-view/fender_stratocaster.usdz#custom=https://staus.github.io/ar-view/banner-button-stratocaster.html&customHeight=large">
+      <img src="https://staus.github.io/ar-view/stratocaster_2x.jpg">
+  </a>
+  
+  <a  id="ar-link-gramophone" rel="ar"
+      href="https://staus.github.io/ar-view/gramophone.usdz#custom=https://staus.github.io/ar-view/banner-button-gramophone.html&customHeight=small">
+      <img src="https://staus.github.io/ar-view/gramophone_2x.jpg">
   </a>
   
   <script>
-    const linkElement = document.getElementById("ar-link");
+    const stratocaster = document.getElementById("ar-link-stratocaster");
     
-    linkElement.addEventListener("message", function (event) {   
+    stratocaster.addEventListener("message", function (event) {   
       if (event.data == "_apple_ar_quicklook_button_tapped") {
-        console.log("Custom button clicked");
+        document.getElementById("title").textContent = "Bye bye stratocaster!";
+        console.log("stratocaster button clicked");
+        window.open("https://www.gear4music.dk/da/Guitar-og-bas/Fender-Vintera-60s-Stratocaster-PF-3-Tone-Sunburst/2ZSV");
+      }
+    }, false);
+    
+    const gramophone = document.getElementById("ar-link-gramophone");
+    
+    gramophone.addEventListener("message", function (event) {   
+      if (event.data == "_apple_ar_quicklook_button_tapped") {
+        document.getElementById("title").textContent = "Bye bye gramophone!";
+        console.log("gramophone button clicked");
+        window.open("https://www.boligcenter.dk/hjem-have/belysning/grammofoner/grammofon-ottekantet-old-style-samling-by-homania");
       }
     }, false);
   </script>
