@@ -93,6 +93,14 @@
         window.open("https://www.boligcenter.dk/hjem-have/belysning/grammofoner/grammofon-ottekantet-old-style-samling-by-homania");
       }
     }, false);
+    
+    const hash = new URL(document.URL).hash
+    if (hash != "") {
+      const link = document.getElementById("ar-link-" + hash)
+      if (link) {
+        link.click()
+      }
+    }
   </script>
   
 </body>
