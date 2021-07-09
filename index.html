@@ -94,7 +94,7 @@
       }
     }, false);
     
-    const hash = new URL(document.URL).hash
+    let hash = new URL(document.URL).hash
     console.log("Hash", hash);
     if (hash != "") {
       hash = hash.substring(1)
