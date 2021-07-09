@@ -29,7 +29,17 @@
   <meta name="theme-color" content="#000000">
   
   <style>
+    html{
+      background-color: black;
+    }
+    html.hash body{
+      opacity: 0;
+    }
+    html:not(.hash) body{
+      transition: opacity 0.5s 0.5s;
+    }
     body{
+      background-color: white;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -124,20 +134,21 @@
         window.open("https://www.boligcenter.dk/hjem-have/belysning/grammofoner/grammofon-ottekantet-old-style-samling-by-homania");
       }
     }, false);
-    
-    setTimeout(() => {
-      let hash = new URL(document.URL).hash
-      console.log("Hash", hash);
-      if (hash != "") {
+   
+    let hash = new URL(document.URL).hash
+    console.log("Hash", hash);
+    if (hash != "") {
+      document.documentElement.classList.add('hash');
+      setTimeout(() => {
         hash = hash.substring(1)
         const link = document.getElementById("ar-link-" + hash)
         console.log("Link", link);
         if (link) {
-
           link.click()
+          document.documentElement.classList.remove('hash');
         }
-      }
-    }, 500);
+      }, 500);
+    }
     
   </script>
   
