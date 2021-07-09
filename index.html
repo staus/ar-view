@@ -98,8 +98,10 @@
     }, false);
     
     const hash = new URL(document.URL).hash
+    console.log("Hash", hash);
     if (hash != "") {
       const link = document.getElementById("ar-link-" + hash)
+      console.log("Link", link);
       if (link) {
         link.click()
       }
